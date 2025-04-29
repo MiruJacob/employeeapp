@@ -51,7 +51,7 @@ CREATE TABLE employees (
 
 3. **Run the app on Payara Server:**
 - Deploy the WAR via NetBeans or Payara Admin Console.
-- Access at: `http://localhost:8080/EmployeeApplication/employee-listing.xhtml`
+- Access at: `http://localhost:8080/EmployeeApplication/index.xhtml`
 
 ## 🧪 Features
 - Add new employee

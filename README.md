@@ -26,7 +26,7 @@ EmployeeApplication/
 
 1. **Clone the repository:**
 ```bash
-git clone https://github.com/MiruJacob/employeeapp
+git clone git@github.com:MiruJacob/employeeapp.git / https://github.com/MiruJacob/employeeapp.git
 cd EmployeeApplication
 ```
 

@@ -1,1 +1,62 @@
-"# employeeapp" 
+# Employee Management App
+
+A simple CRUD web application built using **Jakarta EE 10**, **PrimeFaces 12**, and **Payara 6**. This application allows you to add, view, update, and delete employee records stored in a MySQL database.
+
+## 🛠 Technologies Used
+- Java 21
+- Jakarta EE 10
+- PrimeFaces 12
+- Payara Server 6
+- MySQL 8
+- Maven
+- NetBeans 24
+
+## 📁 Project Structure
+```
+EmployeeApplication/
+├── src/main/java/com/employeeapp/   # Java EE code (beans, model, DAO)
+├── src/main/webapp/                # JSF XHTML pages (views)
+│   ├── employee-listing.xhtml
+│   └── employee-form.xhtml
+├── pom.xml                         # Maven configuration
+└── README.md
+```
+
+## ⚙️ Setup Instructions
+
+1. **Clone the repository:**
+```bash
+git clone https://github.com/MiruJacob/employeeapp
+cd EmployeeApplication
+```
+
+2. **Configure MySQL database:**
+Create a database and user:
+```sql
+CREATE DATABASE employeedb;
+CREATE USER 'employeeuser'@'localhost' IDENTIFIED BY 'employeepass';
+GRANT ALL PRIVILEGES ON employeedb.* TO 'employeeuser'@'localhost';
+```
+
+3. **Run the app on Payara Server:**
+- Deploy the WAR via NetBeans or Payara Admin Console.
+- Access at: `http://localhost:8080/EmployeeApplication/employee-listing.xhtml`
+
+## 🧪 Features
+- Add new employee
+- View all employees
+- Edit existing employee
+- Delete employee
+- Navigation between form and listing
+
+## 🧹 TODO
+- Add pagination and sorting
+- Form validation improvements
+- Dockerize app
+- Add unit tests
+
+## 👨‍💻 Author
+Jake Miru
+
+---
+Feel free to contribute or fork the project!

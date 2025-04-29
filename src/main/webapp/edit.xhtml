@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Edit Employee</title>
+</h:head>
+<h:body>
+
+    <h:form id="editForm">
+
+        <h2>Edit Employee</h2>
+
+        <p:panelGrid columns="2" columnClasses="label,value">
+
+            <p:outputLabel for="firstName" value="First Name:" />
+            <p:inputText id="firstName" value="#{employeeBean.employee.firstName}" required="true" />
+
+            <p:outputLabel for="lastName" value="Last Name:" />
+            <p:inputText id="lastName" value="#{employeeBean.employee.lastName}" required="true" />
+
+            <p:outputLabel for="email" value="Email:" />
+            <p:inputText id="email" value="#{employeeBean.employee.email}" required="true">
+                <f:validateRegex pattern="^\\S+@\\S+\\.\\S+$" />
+            </p:inputText>
+
+            <p:outputLabel for="department" value="Department:" />
+            <p:inputText id="department" value="#{employeeBean.employee.department}" />
+
+            <p:outputLabel for="salary" value="Salary:" />
+            <p:inputNumber id="salary" value="#{employeeBean.employee.salary}" symbol=" KSh" symbolPosition="s" />
+
+        </p:panelGrid>
+
+        <p:commandButton value="Update" action="#{employeeBean.updateEmployee}" 
+                         update="@form" icon="pi pi-check" />
+
+        <p:commandButton value="Back to List" action="index.xhtml?faces-redirect=true" 
+                         icon="pi pi-arrow-left" style="margin-left:10px" />
+
+    </h:form>
+
+</h:body>
+</html>

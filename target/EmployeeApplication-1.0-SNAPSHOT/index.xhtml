@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title>Employee Listing</title>
+</h:head>
+<h:body>
+    <h:form id="listingForm">
+
+        <p:messages id="messages" showDetail="true" closable="true" />
+
+        <h2>All Employees</h2>
+        <p:dataTable id="employeeTable" value="#{employeeBean.employees}" var="emp" editable="true" rowKey="#{emp.id}" selectionMode="single" selection="#{employeeBean.selectedEmployee}">
+            <p:column headerText="ID">#{emp.id}</p:column>
+            <p:column headerText="First Name">#{emp.firstName}</p:column>
+            <p:column headerText="Last Name">#{emp.lastName}</p:column>
+            <p:column headerText="Email">#{emp.email}</p:column>
+            <p:column headerText="Phone">#{emp.phoneNumber}</p:column>
+            <p:column headerText="Department">#{emp.department}</p:column>
+            <p:column headerText="Salary">#{emp.salary}</p:column>
+
+            <p:column headerText="Actions">
+                <p:commandButton value="Edit"
+                                 actionListener="#{employeeBean.setEmployee(emp)}"
+                                 action="employee-form.xhtml?faces-redirect=true"
+                                 ajax="false"
+                                 process="@this" />
+
+                <p:commandButton value="Delete"
+                                 actionListener="#{employeeBean.deleteEmployee(emp)}"
+                                 update=":listingForm:employeeTable :listingForm:messages"
+                                 process="@this" />
+            </p:column>
+        </p:dataTable>
+
+        <p:commandButton value="Add New Employee" action="employee-form.xhtml?faces-redirect=true" ajax="false" />
+
+    </h:form>
+</h:body>
+</html>
